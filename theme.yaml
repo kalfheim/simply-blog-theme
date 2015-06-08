@@ -14,7 +14,7 @@ form:
 
             name:
                 label: Blog Name
-                comment: The name of the blog, or your own name.
+                comment: The name of the blog, or your own name. This is displayed in the menu section and page titles.
                 default: Mr. Foo Bar
                 tab: General
 
@@ -134,6 +134,4 @@ form:
                 tab: Meta
 
 require:
-    - RainLab.Pages
     - RainLab.Blog
-    - Krisawzm.Embed
