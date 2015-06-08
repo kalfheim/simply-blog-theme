@@ -3,7 +3,21 @@ url = "/404"
 layout = "default"
 description = "404 Page."
 hidden = "0"
-==
-<h2>The page you requested is unfortunately nowhere to be found!</h2>
 
-<p class="lead">Instead, here are a few of my latest blog posts:</p>
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "10"
+noPostsMessage = "No posts found!"
+sortOrder = "published_at desc"
+categoryPage = "blog/tag"
+postPage = "blog/post"
+==
+<section class="posts-list">
+
+  <h2>The page you requested is unfortunately nowhere to be found!</h2>
+
+  <p class="lead">Instead, here are a few of my latest blog posts:</p>
+
+  {% partial 'blogPostsListRaw' %}
+
+</section>

@@ -26,10 +26,11 @@ function onEnd()
 <html lang="{{ this.theme.meta_lang }}">
   <head>
     <meta charset="utf-8">
-    <title>{{ this.page.id == 'home' ? this.theme.name : this.page.title ~ ' - ' ~ this.theme.name }}</title>
-    <meta name="title" content="{{ this.page.title }}">
+    {% set title = this.page.id == 'home' ? this.theme.name : this.page.title ~ ' - ' ~ this.theme.name %}
+    <title>{{ title }}</title>
+    <meta name="title" content="{{ title }}">
     <meta name="description" content="{{ this.page.description }}">
-    <meta property="og:title" content="{{ this.page.title }}">
+    <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ this.page.description }}">
     <meta name="canonical" content="{{ ''|page }}">
 

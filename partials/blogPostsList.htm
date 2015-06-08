@@ -2,24 +2,6 @@
 
   <h1 class="content-heading">{{ this.page.title }}</h1>
 
-  {% for post in blogPosts.posts %}
-
-    <div class="post">
-
-      <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p class="post-excerpt">{{ post.excerpt }}</p>
-      <p class="post-info">
-        Posted
-        {% if post.categories.count %} in
-            {% for category in post.categories %}
-                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-        {% endif %}
-        on {{ post.published_at|date('M d, Y') }}
-      </p>
-
-    </div>
-
-  {% endfor %}
+  {% partial 'blogPostsListRaw' %}
 
 </section>
