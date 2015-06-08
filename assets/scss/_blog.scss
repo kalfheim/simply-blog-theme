@@ -1,0 +1,32 @@
+.blog-featured-image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: $margin-base;
+}
+
+.blog-footer {
+  margin-top: $margin-base;
+  color: #999;
+}
+
+.posts-list {
+  .post {
+
+    padding-top: ($margin-base / 2);
+    padding-bottom: ($margin-base / 2);
+
+    + .post {
+      border-top: solid 1px #f6f6f6;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+  }
+
+  .post-info {
+    font-size: 90%;
+    color: #aaa;
+  }
+}

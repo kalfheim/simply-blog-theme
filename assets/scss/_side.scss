@@ -1,0 +1,141 @@
+.side {
+  @include clearfix;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: $side-width;
+
+  transition: left $side-animation-duration $side-animation-effect;
+}
+
+.side-header {
+  text-align: center;
+  background-color: #fff;
+
+  > .social-icons {
+    padding: 0 $margin-base;
+    padding-bottom: ($margin-base / 2);
+    margin-bottom: 0;
+
+    list-style: none;
+
+    > li {
+      display: inline-block;
+      margin: 5px;
+    }
+  }
+}
+
+.side-avatar {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin-top: $margin-base;
+
+  border-radius: 50%;
+
+  > img {
+    max-width: 100%;
+    border: solid 5px #f4f4f4;
+    border-radius: 50%;
+  }
+}
+
+.side-heading {
+  margin-top: $margin-base;
+  margin-bottom: ($margin-base / 2);
+
+  font-size: 18px;
+  font-weight: 400;
+  color: #777;
+}
+
+.side-content {
+  padding: ($margin-base / 2) $margin-base;
+
+  > h3 {
+    margin-top: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+    color: #adadad;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  > p {
+    line-height: 1.6em;
+    color: #666;
+    text-align: justify;
+  }
+
+  > hr {
+    width: 50px;
+    margin: ($margin-base / 2) auto;
+
+    border-color: #f0f0f0;
+  }
+}
+
+.side-categories {
+  @include clearfix;
+
+  $item-margin: 3px;
+
+  margin: -$item-margin;
+  list-style: none;
+
+  > li {
+    display: block;
+    float: left;
+    margin: $item-margin;
+
+    > a {
+      display: inline-block;
+      padding: 5px 8px;
+
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none;
+
+      border-radius: 5px;
+
+      > span {
+        display: inline-block;
+        padding: 1px 5px;
+
+        margin-right: 2px;
+
+        font-size: 10px;
+        color: #ddd;
+
+        background: rgba(0, 0, 0, .25);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.recent-posts {
+  list-style: none;
+
+  li {
+    padding-bottom: 8px;
+
+    font-size: 11px;
+    color: #aaa;
+
+    + li {
+      padding-top: 8px;
+      border-top: solid 1px #f3f3f3;
+    }
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-size: 15px;
+  }
+}

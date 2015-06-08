@@ -1,0 +1,29 @@
+title = "Blog Category"
+url = "/tag/:slug"
+layout = "default"
+description = "A blog category."
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = "20"
+noPostsMessage = "No posts found!"
+sortOrder = "published_at desc"
+categoryPage = "blog/tag"
+postPage = "blog/post"
+==
+<?php
+function onEnd()
+{
+  if (isset($this['category'])) {
+    $this->page->title = $this->category->name;
+    // $this->page->description = $this->post->excerpt;
+  }
+  else {
+    return $this->controller->run('/404');
+  }
+}
+?>
+==
+{% partial 'blogPostsList' %}

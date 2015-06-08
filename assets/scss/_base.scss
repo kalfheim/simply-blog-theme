@@ -1,0 +1,9 @@
+body {
+  padding-left: $side-width;
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  transition: padding-left $side-animation-duration $side-animation-effect;
+}

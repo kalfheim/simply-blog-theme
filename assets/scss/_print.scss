@@ -1,0 +1,10 @@
+@media print {
+  .side {
+    display: none;
+  }
+
+  .content {
+    float: none;
+    width: 100%;
+  }
+}

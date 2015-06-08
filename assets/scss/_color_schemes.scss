@@ -1,0 +1,69 @@
+@mixin color-scheme($color) {
+  background-color: lighten($color, 98% - lightness($color));
+
+  a {
+    color: $color;
+  }
+
+  .btn-outline {
+    color: $color;
+
+    &:hover,
+    &:active,
+    &.selected,
+    &.zeroclipboard-is-hover,
+    &.zeroclipboard-is-active {
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
+
+      .counter {
+        color: $color;
+      }
+    }
+
+    &.selected:hover {
+      background-color: darken($color, 5%);
+    }
+  }
+
+  .menu-btn > .bar {
+    background-color: $color;
+  }
+
+  .side-categories > li > a {
+    background-color: $color;
+
+    &:hover {
+      background-color: lighten($color, 5%);
+    }
+  }
+}
+
+.color-scheme-blue {
+  @include color-scheme($brand-blue);
+}
+
+.color-scheme-red {
+  @include color-scheme($brand-red);
+}
+
+.color-scheme-green {
+  @include color-scheme($brand-green);
+}
+
+.color-scheme-orange {
+  @include color-scheme($brand-orange);
+}
+
+.color-scheme-pink {
+  @include color-scheme(#ea4c89);
+}
+
+.color-scheme-purple {
+  @include color-scheme($brand-purple);
+}
+
+.color-scheme-gray {
+  @include color-scheme($brand-gray);
+}

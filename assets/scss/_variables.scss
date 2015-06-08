@@ -1,0 +1,21 @@
+/*
+ * App variables.
+ */
+
+$margin-base: 40px !default;
+
+/* Bootstrap style breakpoints */
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+
+/* Side bar. */
+$side-border-color: #e0dfdf;
+$side-width: 300px;
+$side-animation-duration: 500ms;
+$side-animation-effect: ease-in-out;

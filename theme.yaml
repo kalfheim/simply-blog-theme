@@ -1,0 +1,139 @@
+name: Simply Blog
+author: Kristoffer Alfheim
+homepage: https://github.com/krisawzm/simply-blog-theme
+description: Is it a bird? Is it a plane? No, it is just a simple blog!
+code: Simply-Blog
+
+form:
+    tabs:
+        fields:
+
+            #
+            # General tab.
+            #
+
+            name:
+                label: Blog Name
+                comment: The name of the blog, or your own name.
+                default: Mr. Foo Bar
+                tab: General
+
+            avatar:
+                label: Avatar Picture
+                comment: The avatar picture in the menu section. The aspect ratio must be 1:1. Size should be 120 px or more.
+                default: https://www.gravatar.com/avatar/default?s=120
+                tab: General
+
+            color_scheme:
+                label: Color Scheme
+                comment: Main color scheme.
+                tab: General
+                type: dropdown
+                default: blue
+                options:
+                    blue: Blue
+                    red: Red
+                    green: Green
+                    orange: Orange
+                    pink: Pink
+                    purple: Purple
+                    gray: Gray
+
+            content_max_width:
+                label: Content Max Width
+                comment: The maximum width of the content section. This is useful to prevent your blog posts from stretching across a big screen.
+                tab: General
+                type: dropdown
+                default: 800
+                options:
+                    600: 600 px
+                    800: 800 px
+                    1000: 1000 px
+                    1200: 1200 px
+                    stretch: Always stretch to full width
+
+            content_font_size:
+                label: Content Font Size
+                comment: Font size used in the content section.
+                tab: General
+                type: dropdown
+                default: 16
+                options:
+                    14: 14 px
+                    15: 15 px
+                    16: 16 px
+                    17: 17 px
+                    18: 18 px
+                    19: 19 px
+                    20: 20 px
+
+            #
+            # Social Buttons tab.
+            #
+
+            social_buttons:
+                type: repeater
+                tab: Social Buttons
+                form:
+                    fields:
+                        fa:
+                            label: Font-Awesome Icon
+                            comment: See https://fortawesome.github.io/Font-Awesome/icons/
+                            type: dropdown
+                            span: left
+                            options:
+                                bitbucket: bitbucket
+                                codepen: codepen
+                                delicious: delicious
+                                deviantart: deviantart
+                                dribbble: dribbble
+                                facebook: facebook
+                                flickr: flickr
+                                github: github
+                                instagram: instagram
+                                jsfiddle: jsfiddle
+                                lastfm: lastfm
+                                linkedin: linkedin
+                                paypal: paypal
+                                pinterest: pinterest
+                                reddit: reddit
+                                skype: skype
+                                slack: slack
+                                spotify: spotify
+                                stack-exchange: stack-exchange
+                                stack-overflow: stack-overflow
+                                tumblr: tumblr
+                                twitch: twitch
+                                twitter: twitter
+                                vine: vine
+                                youtube: youtube
+
+                        color:
+                            label: Brand Color (See brandcolors.net)
+                            type: colorpicker
+                            span: right
+
+                        href:
+                            label: URL
+                            comment: The full URL to your profile. It is recommended to begin the URL with two forward slash. Eg: //twitter.com/krisawzm
+
+
+            #
+            # Meta tab.
+            #
+
+            meta_author:
+                label: Author
+                comment: Contents of the <meta name="author"> element.
+                tab: Meta
+
+            meta_lang:
+                label: Language Code
+                comment: Language code in <body lang="$x">
+                default: en
+                tab: Meta
+
+require:
+    - RainLab.Pages
+    - RainLab.Blog
+    - Krisawzm.Embed

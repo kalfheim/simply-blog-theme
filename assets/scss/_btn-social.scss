@@ -1,0 +1,18 @@
+.btn-social {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  font-family: "FontAwesome";
+  font-size: 17px;
+  line-height: 32px;
+  color: #fff;
+  text-align: center;
+
+  border-radius: 50%;
+
+  &:hover {
+    text-decoration: none;
+    opacity: .7;
+  }
+}

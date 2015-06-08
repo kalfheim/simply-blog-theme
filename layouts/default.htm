@@ -1,0 +1,134 @@
+description = "Default layout"
+
+[blogPosts recentBlogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "5"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/tag"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "0"
+categoryPage = "blog/tag"
+==
+<?php
+function onEnd()
+{
+  // if ($this->page->id != 'home') {
+  //   $this->page->title .= ' - ' . $this->page->theme->getConfigValue('name', '');
+  // }
+}
+?>
+==
+<!DOCTYPE html>
+<html lang="{{ this.theme.meta_lang }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ this.page.id == 'home' ? this.theme.name : this.page.title ~ ' - ' ~ this.theme.name }}</title>
+    <meta name="title" content="{{ this.page.title }}">
+    <meta name="description" content="{{ this.page.description }}">
+    <meta property="og:title" content="{{ this.page.title }}">
+    <meta property="og:description" content="{{ this.page.description }}">
+    <meta name="canonical" content="{{ ''|page }}">
+
+    {% if this.theme.meta_author %}
+      <meta name="author" content="{{ this.theme.meta_author }}">
+    {% endif %}
+
+    {% styles %}
+
+    <link rel="stylesheet" href="{{ 'assets/css/app.css'|theme }}">
+  </head>
+  <body class="color-scheme-{{ this.theme.color_scheme }}">
+
+    <section class="side">
+
+      <header class="side-header">
+
+        <a class="side-avatar" href="{{ 'home'|page }}">
+          <img src="{{ this.theme.avatar }}" alt="{{ this.theme.name }}">
+        </a>
+
+        <h2 class="side-heading">{{ this.theme.name }}</h2>
+
+        <ul class="social-icons">
+
+          {% for btn in this.theme.social_buttons %}
+
+            <li>
+              <a class="btn-social fa-{{ btn.fa }}" href="{{ btn.href }}" style="background-color: {{ btn.color }};"></a>
+            </li>
+
+          {% endfor %}
+
+        </ul>
+
+      </header>
+
+      <div class="side-content">
+
+        <h3>Who am I?</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam quisquam saepe voluptatem iure non odit vel quos. Iusto, quos.</p>
+
+        <hr>
+
+        <h3>What I write about</h3>
+
+        <ul class="side-categories">
+          {% for category in blogCategories.categories %}
+
+            <li><a href="{{ category.url }}"><span>{{ category.post_count }}</span> {{ category.name }}</a></li>
+
+          {% endfor %}
+        </ul>
+
+        <hr>
+
+        <h3>Recent Posts</h3>
+
+        <ul class="recent-posts">
+
+          {% for post in recentBlogPosts.posts %}
+
+            <li>
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              {{ post.published_at|date('M d, Y') }}
+            </li>
+
+          {% endfor %}
+
+        </ul>
+
+      </div>
+
+    </section>
+
+    <div class="content">
+
+      <a class="menu-btn" href="#">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+
+      <div class="page-content width-{{ this.theme.content_max_width }} font-size-{{ this.theme.content_font_size }}">
+
+        {% page %}
+
+      </div>
+
+    </div>
+
+    <script src="{{ 'assets/js-dist/app.min.js'|theme }}"></script>
+
+    {{ scripts }}
+
+    {% if this.environment == 'dev' %}
+      <!-- Enables autoreload (ONLY use in development) -->
+      <script src="//localhost:35729/livereload.js"></script>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,14 @@
+title = "Home"
+url = "/"
+layout = "default"
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "20"
+noPostsMessage = "No posts found!"
+sortOrder = "published_at desc"
+categoryPage = "blog/tag"
+postPage = "blog/post"
+==
+{% partial 'blogPostsList' %}

@@ -1,0 +1,18 @@
+linters:
+    ColorVariable:
+        enabled: false
+
+    Comment:
+        enabled: false
+
+    NestingDepth:
+        max_depth: 5
+
+    PropertySortOrder:
+        order: recess
+
+    SelectorDepth:
+        max_depth: 4
+
+    StringQuotes:
+        style: double_quotes
