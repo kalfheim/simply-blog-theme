@@ -23,27 +23,27 @@ function onEnd()
 ==
 {% set post = blogPost.post %}
 
-<article class="blog-post">
+<article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
 
   <header class="blog-header">
 
-    <h1 class="content-heading">{{ post.title }}</h1>
+    <h1 class="content-heading" itemprop="headline">{{ post.title }}</h1>
 
     {% for image in post.featured_images %}
 
-      <img class="blog-featured-image" src="{{ image.path }}" alt="{{ image.description }}">
+      <img class="blog-featured-image" src="{{ image.path }}" alt="{{ image.description }}" itemprop="image">
 
     {% endfor %}
 
     {% if post.excerpt %}
 
-      <p class="lead blog-excerpt">{{ post.excerpt }}</p>
+      <p class="lead blog-excerpt" itemprop="description">{{ post.excerpt }}</p>
 
     {% endif %}
 
   </header>
 
-  <div class="markdown-body">
+  <div class="markdown-body" itemprop="articleBody">
     {{ post.content_html|raw }}
   </div>
 
@@ -52,11 +52,14 @@ function onEnd()
     <p class="info">
         Posted
         {% if post.categories.count %} in
-            {% for category in post.categories %}
-                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
+            <span itemprop="keywords">
+              {% for category in post.categories %}
+                  <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </span>
         {% endif %}
-        on {{ post.published_at|date('M d, Y') }}
+        on <time itemprop="datePublished" datetime="{{ post.published_at|date('Y-m-d') }}">{{ post.published_at|date('M d, Y') }}</time>
+        by <span itemprop="author">{{ post.user.full_name }}</span>
     </p>
   </footer>
 

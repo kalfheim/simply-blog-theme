@@ -4,4 +4,26 @@
 
   {% partial 'blogPostsListRaw' %}
 
+  {% set posts = blogPosts.posts %}
+
+  {% if posts.lastPage > 1 %}
+
+    <nav class="btn-group posts-pagination" role="navigation">
+
+      {% if posts.currentPage > 1 %}
+        <a class="btn btn-outline" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}" rel="prev">Previous page</a>
+      {% endif %}
+
+      {% for page in 1..posts.lastPage %}
+        <a class="btn btn-outline{{ posts.currentPage == page ? ' selected' }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+      {% endfor %}
+
+      {% if posts.lastPage > posts.currentPage %}
+        <a class="btn btn-outline" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}" rel="next">Next page</a>
+      {% endif %}
+
+    </nav>
+
+  {% endif %}
+
 </section>

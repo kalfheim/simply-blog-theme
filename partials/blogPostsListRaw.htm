@@ -1,19 +1,28 @@
 {% for post in blogPosts.posts %}
 
-  <div class="post">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="post-excerpt">{{ post.excerpt }}</p>
+    <h2 class="post-title">
+      <a href="{{ post.url }}" itemprop="url">
+        <span itemprop="headline">{{ post.title }}</span>
+      </a>
+    </h2>
+
+    <p class="post-excerpt" itemprop="description">{{ post.excerpt }}</p>
+
     <p class="post-info">
       Posted
       {% if post.categories.count %} in
+          <span itemprop="keywords">
           {% for category in post.categories %}
               <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
           {% endfor %}
+          </span>
       {% endif %}
-      on {{ post.published_at|date('M d, Y') }}
+      on <time itemprop="datePublished" datetime="{{ post.published_at|date('Y-m-d') }}">{{ post.published_at|date('M d, Y') }}</time>
+      by <span itemprop="author">{{ post.user.full_name }}</span>
     </p>
 
-  </div>
+  </article>
 
 {% endfor %}
