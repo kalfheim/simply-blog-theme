@@ -24,6 +24,14 @@ form:
                 default: https://www.gravatar.com/avatar/default?s=120
                 tab: General
 
+            whoami:
+                label: Blog Description
+                comment: The text under "Who am I?". Keep it short.
+                type: textarea
+                size: tiny
+                default: ''
+                tab: General
+
             color_scheme:
                 label: Color Scheme
                 comment: Main color scheme.

@@ -17,12 +17,16 @@ categoryPage = "blog/tag"
 <html lang="{{ this.theme.meta_lang }}">
   <head>
     <meta charset="utf-8">
+
     {% set title = this.page.id == 'home' ? this.theme.name : this.page.title ~ ' - ' ~ this.theme.name %}
     <title>{{ title }}</title>
     <meta name="title" content="{{ title }}">
-    <meta name="description" content="{{ this.page.description }}">
+
+    {% set description = this.page.description ?: this.theme.whoami %}
+    <meta name="description" content="{{ description }}">
     <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="{{ this.page.description }}">
+    <meta property="og:description" content="{{ description }}">
+
     <meta name="canonical" content="{{ ''|page }}">
 
     {% if this.theme.meta_author %}
@@ -63,7 +67,7 @@ categoryPage = "blog/tag"
 
         <h3>Who am I?</h3>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam quisquam saepe voluptatem iure non odit vel quos. Iusto, quos.</p>
+        <p>{{ this.theme.whoami }}</p>
 
         <hr>
 
