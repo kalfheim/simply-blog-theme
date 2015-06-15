@@ -10,7 +10,7 @@ This theme is great for anyone who simply wants to write about stuff and not wor
 
 ### Features
 
-- Uses the official RainLab.Blog plugin.
+- Uses the official [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog) plugin.
 - Very customizable. Text, avatar, font size, color scheme (blue, red, green, orange, pink, purple and gray) and even the social buttons in the menu section can easily be changed.
 - Pagination.
 - Mobile friendly.
