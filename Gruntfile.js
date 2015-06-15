@@ -64,22 +64,6 @@ module.exports = function (grunt) {
       }
     },
 
-    imagemin: {
-      images: {
-        options: {
-          optimizationLevel: 7,
-          progressive: true,
-          use: [require('imagemin-mozjpeg')()]
-        },
-        files: [{
-          expand: true,
-          cwd: 'assets/images/',
-          src: ['**/*.{png,jpg,jpeg,gif,svg}'],
-          dest: 'assets/images/'
-        }]
-      }
-    },
-
     sass: {
       options: {
         sourceMap: true,
@@ -151,28 +135,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask(
-    'css',
-    'Compile LESS to CSS and run postcss for production.',
-    ['sass:app', 'postcss:app']
-  );
-
-  grunt.registerTask(
-    'images',
-    'Run imagemin on images.',
-    ['imagemin:images']
-  );
-
-  grunt.registerTask(
     'default',
-    'Build the theme for production.',
-    ['css', 'images']
+    'Compile Sass and run postcss for production.',
+    ['sass:app', 'postcss:app']
   );
 
   grunt.registerTask(
