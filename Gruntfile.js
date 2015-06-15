@@ -123,7 +123,10 @@ module.exports = function (grunt) {
   grunt.registerTask(
     'default',
     'Build for production.',
-    ['scsslint:app', 'sass:app', 'postcss:app', 'jshint:app', 'jscs:app', 'uglify:app']
+    [
+      'scsslint:app', 'sass:app', 'postcss:app', 'jshint:app', 'jscs:app',
+      'uglify:app'
+    ]
   );
 
   grunt.registerTask(
