@@ -40,7 +40,11 @@
 
 @media (max-width: $screen-xs-max) {
   .side {
-    // width: 260px;
+    width: 260px;
+  }
+
+  .side-visible {
+    padding-left: 260px;
   }
 
   .content {
