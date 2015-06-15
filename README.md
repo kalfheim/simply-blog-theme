@@ -29,5 +29,5 @@ This theme uses [Grunt](http://gruntjs.com/) to run build tasks.
 
 #### Grunt Commands
 
-- **default:** Compile Sass and run postcss for production
+- **default:** Build for production
 - **dev:** Development mode

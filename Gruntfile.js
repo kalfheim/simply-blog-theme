@@ -133,8 +133,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask(
     'default',
-    'Compile Sass and run postcss for production.',
-    ['sass:app', 'postcss:app']
+    'Build for production.',
+    ['scsslint:app', 'sass:app', 'postcss:app', 'jshint:app', 'jscs:app', 'uglify:app']
   );
 
   grunt.registerTask(
