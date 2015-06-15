@@ -52,9 +52,6 @@ module.exports = function (grunt) {
       // },
 
       app: {
-        options: {
-          sourceMap: true
-        },
         files: {
           'assets/js-dist/app.min.js': [
             'assets/vendor/highlightjs/highlight.js',
@@ -66,8 +63,6 @@ module.exports = function (grunt) {
 
     sass: {
       options: {
-        sourceMap: true,
-        sourceComments: false,
         outputStyle: 'compressed'
       },
       app: {
@@ -90,10 +85,6 @@ module.exports = function (grunt) {
 
     postcss: {
       options: {
-        map: {
-          inline: false,
-          prev: 'assets/css/'
-        },
         processors: [
           require('autoprefixer-core')({browsers: [
             'last 2 versions', 'ie 8', 'ie 9'
