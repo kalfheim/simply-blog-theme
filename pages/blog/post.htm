@@ -48,7 +48,9 @@ function onEnd()
   </div>
 
   <footer class="blog-footer">
+
     <hr>
+
     <p class="info">
         Posted
         {% if post.categories.count %} in
@@ -61,6 +63,32 @@ function onEnd()
         on <time itemprop="datePublished" datetime="{{ post.published_at|date('Y-m-d') }}">{{ post.published_at|date('M d, Y') }}</time>
         by <span itemprop="author">{{ post.user.full_name }}</span>
     </p>
+
+    <div class="btn-share-group">
+
+      <span class="btn-share btn-share-label">Share this post:</span>
+
+      {% set url = ''|page|url_encode %}
+      {% set title = post.title|url_encode %}
+
+      {% set social = [
+        ['facebook',    'Facebook',    'https://www.facebook.com/sharer/sharer.php?u=' ~ url],
+        ['gplus',       'Google+',     'https://plus.google.com/share?url=' ~ url],
+        ['twitter',     'Twitter',     'https://twitter.com/home?status=' ~ url],
+        ['reddit',      'Reddit',      'https://reddit.com/submit?url=' ~ url ~ '&amp;title=' ~ title],
+        ['tumblr',      'Tumblr',      'https://tumblr.com/widgets/share/tool?canonicalUrl=' ~ url],
+        ['stumbleupon', 'StumbleUpon', 'https://www.stumbleupon.com/submit?url=' ~ url ~ '&amp;title=' ~ title],
+        ['linkedin',    'LinkedIn',    'https://www.linkedin.com/shareArticle?url=' ~ url ~ '&amp;mini=true&amp;title=' ~ title ~ '&amp;summary=' ~ post.excerpt|url_encode ~ '&amp;source=' ~ url],
+      ] %}
+
+      {% for n in social %}
+
+        <a class="btn-share btn-share-{{ n[0] }}" href="{{ n[2]|raw }}" target="_blank" title="Share on {{ n[1] }}" aria-label="Share on {{ n[1] }}" role="button"></a>
+
+      {% endfor %}
+
+    </div>
+
   </footer>
 
 </article>

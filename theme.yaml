@@ -20,7 +20,7 @@ form:
 
             avatar:
                 label: Avatar Picture
-                comment: The avatar picture in the menu section. The aspect ratio must be 1:1. Size should be 120 px or more.
+                comment: The avatar picture in the menu section. Size should be 120 x 120 px.
                 default: https://www.gravatar.com/avatar/default?s=120
                 tab: General
 

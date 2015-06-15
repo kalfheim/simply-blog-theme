@@ -17,6 +17,7 @@ categoryPage = "blog/tag"
 <html lang="{{ this.theme.meta_lang }}">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     {% set title = this.page.id == 'home' ? this.theme.name : this.page.title ~ ' - ' ~ this.theme.name %}
     <title>{{ title }}</title>
@@ -33,9 +34,8 @@ categoryPage = "blog/tag"
       <meta name="author" content="{{ this.theme.meta_author }}">
     {% endif %}
 
-    {% styles %}
-
     <link rel="stylesheet" href="{{ 'assets/css/app.css'|theme }}">
+    {% styles %}
   </head>
   <body class="color-scheme-{{ this.theme.color_scheme }}">
 
@@ -44,7 +44,7 @@ categoryPage = "blog/tag"
       <header class="side-header">
 
         <a class="side-avatar" href="{{ 'home'|page }}">
-          <img src="{{ this.theme.avatar }}" alt="{{ this.theme.name }}">
+          <img src="{{ this.theme.avatar }}" alt="{{ this.theme.name }}" width="120" height="120">
         </a>
 
         <h2 class="side-heading">{{ this.theme.name }}</h2>
@@ -121,10 +121,5 @@ categoryPage = "blog/tag"
     <script src="{{ 'assets/js-dist/app.min.js'|theme }}"></script>
 
     {{ scripts }}
-
-    {% if this.environment == 'dev' %}
-      <!-- Enables autoreload (ONLY use in development) -->
-      <script src="//localhost:35729/livereload.js"></script>
-    {% endif %}
   </body>
 </html>

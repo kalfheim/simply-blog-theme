@@ -5,6 +5,9 @@ linters:
     Comment:
         enabled: false
 
+    ImportantRule:
+        enabled: false
+
     NestingDepth:
         max_depth: 5
 
