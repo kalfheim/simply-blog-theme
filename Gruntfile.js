@@ -99,12 +99,6 @@ module.exports = function (grunt) {
     },
 
     watch: {
-      options: {
-        livereload: {
-          port: 35729
-        }
-      },
-
       js: {
         files: '<%= jshint.app.src %>',
         tasks: ['jshint:app', 'uglify:app']
@@ -113,11 +107,6 @@ module.exports = function (grunt) {
       sass: {
         files: 'assets/scss/**/*.scss',
         tasks: ['scsslint:app', 'sass:app']
-      },
-
-      twig: {
-        files: '{content,layouts,pages,partials}/**/*.htm'
-        // Just to trigger livereload.
       }
     }
   });
