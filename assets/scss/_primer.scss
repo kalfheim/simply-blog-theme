@@ -16,29 +16,29 @@ $body-font-size: 14px;
  */
 
 // Global requirements
-@import "../../bower_components/primer-css/scss/variables";
-@import "../../bower_components/primer-css/scss/mixins";
+@import "../vendor/primer-css/scss/variables";
+@import "../vendor/primer-css/scss/mixins";
 
 // Basecoat
-@import "../../bower_components/primer-css/scss/normalize";
-@import "../../bower_components/primer-css/scss/base";
-@import "../../bower_components/primer-css/scss/type";
-@import "../../bower_components/primer-css/scss/layout";
-@import "../../bower_components/primer-css/scss/forms";
-@import "../../bower_components/primer-css/scss/utility";
+@import "../vendor/primer-css/scss/normalize";
+@import "../vendor/primer-css/scss/base";
+@import "../vendor/primer-css/scss/type";
+@import "../vendor/primer-css/scss/layout";
+// @import "../vendor/primer-css/scss/forms";
+// @import "../vendor/primer-css/scss/utility";
 
 // Components
-@import "../../bower_components/primer-css/scss/alerts";
-@import "../../bower_components/primer-css/scss/avatars";
-@import "../../bower_components/primer-css/scss/blankslate";
-@import "../../bower_components/primer-css/scss/counter";
-@import "../../bower_components/primer-css/scss/buttons";
-@import "../../bower_components/primer-css/scss/menu";
-@import "../../bower_components/primer-css/scss/tabnav";
-@import "../../bower_components/primer-css/scss/filter-list";
-@import "../../bower_components/primer-css/scss/states";
-@import "../../bower_components/primer-css/scss/tooltips";
+// @import "../vendor/primer-css/scss/alerts";
+// @import "../vendor/primer-css/scss/avatars";
+// @import "../vendor/primer-css/scss/blankslate";
+// @import "../vendor/primer-css/scss/counter";
+@import "../vendor/primer-css/scss/buttons";
+// @import "../vendor/primer-css/scss/menu";
+// @import "../vendor/primer-css/scss/tabnav";
+// @import "../vendor/primer-css/scss/filter-list";
+// @import "../vendor/primer-css/scss/states";
+// @import "../vendor/primer-css/scss/tooltips";
 
 // Utilities
-@import "../../bower_components/primer-css/scss/flex-table";
-@import "../../bower_components/primer-css/scss/truncate";
+// @import "../vendor/primer-css/scss/flex-table";
+// @import "../vendor/primer-css/scss/truncate";

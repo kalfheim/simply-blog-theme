@@ -2,6 +2,48 @@
  * Imports Font-Awesome.
  */
 
-$fa-font-path: "../../bower_components/font-awesome/fonts";
+$fa-font-path: "../vendor/font-awesome/fonts";
 
-@import "../../bower_components/font-awesome/scss/font-awesome";
+@import "../vendor/font-awesome/scss/variables";
+@import "../vendor/font-awesome/scss/mixins";
+@import "../vendor/font-awesome/scss/path";
+@import "../vendor/font-awesome/scss/core";
+// @import "../vendor/font-awesome/scss/larger";
+// @import "../vendor/font-awesome/scss/fixed-width";
+// @import "../vendor/font-awesome/scss/list";
+// @import "../vendor/font-awesome/scss/bordered-pulled";
+// @import "../vendor/font-awesome/scss/animated";
+// @import "../vendor/font-awesome/scss/rotated-flipped";
+// @import "../vendor/font-awesome/scss/stacked";
+
+/*
+ * Instead of pulling in ALL icons, let's use only a few.
+ * Font-Awesome is huge...
+ */
+// @import "../vendor/font-awesome/scss/icons";
+
+.#{$fa-css-prefix}-bitbucket:before { content: $fa-var-bitbucket; }
+.#{$fa-css-prefix}-codepen:before { content: $fa-var-codepen; }
+.#{$fa-css-prefix}-delicious:before { content: $fa-var-delicious; }
+.#{$fa-css-prefix}-deviantart:before { content: $fa-var-deviantart; }
+.#{$fa-css-prefix}-dribbble:before { content: $fa-var-dribbble; }
+.#{$fa-css-prefix}-facebook-official:before { content: $fa-var-facebook-official; }
+.#{$fa-css-prefix}-flickr:before { content: $fa-var-flickr; }
+.#{$fa-css-prefix}-github:before { content: $fa-var-github; }
+.#{$fa-css-prefix}-instagram:before { content: $fa-var-instagram; }
+.#{$fa-css-prefix}-jsfiddle:before { content: $fa-var-jsfiddle; }
+.#{$fa-css-prefix}-lastfm:before { content: $fa-var-lastfm; }
+.#{$fa-css-prefix}-linkedin:before { content: $fa-var-linkedin; }
+.#{$fa-css-prefix}-paypal:before { content: $fa-var-paypal; }
+.#{$fa-css-prefix}-pinterest:before { content: $fa-var-pinterest; }
+.#{$fa-css-prefix}-reddit:before { content: $fa-var-reddit; }
+.#{$fa-css-prefix}-skype:before { content: $fa-var-skype; }
+.#{$fa-css-prefix}-slack:before { content: $fa-var-slack; }
+.#{$fa-css-prefix}-spotify:before { content: $fa-var-spotify; }
+.#{$fa-css-prefix}-stack-exchange:before { content: $fa-var-stack-exchange; }
+.#{$fa-css-prefix}-stack-overflow:before { content: $fa-var-stack-overflow; }
+.#{$fa-css-prefix}-tumblr:before { content: $fa-var-tumblr; }
+.#{$fa-css-prefix}-twitch:before { content: $fa-var-twitch; }
+.#{$fa-css-prefix}-twitter:before { content: $fa-var-twitter; }
+.#{$fa-css-prefix}-vine:before { content: $fa-var-vine; }
+.#{$fa-css-prefix}-youtube:before { content: $fa-var-youtube; }

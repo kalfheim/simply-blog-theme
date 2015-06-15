@@ -1,7 +1,2 @@
 node_modules
-bower_components/font-awesome/css
-bower_components/font-awesome/less
-bower_components/primer-css/css
-bower_components/octicons
-bower_components/primer-markdown
 npm-debug.log
