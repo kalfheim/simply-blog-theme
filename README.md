@@ -15,7 +15,7 @@ This theme is great for anyone who simply wants to write about stuff and not wor
 - Pagination.
 - Mobile friendly.
 - Super cool buttons for sharing blog posts across popular social networks.
-- Blog post details and author name is automatically reflected in the page title and description. [schema.org](https://schema.org/) is used to structure blog posts for SEO.
+- Blog post details and author name is automatically reflected in the page title and description. [schema.org](https://schema.org/) is used to structure blog posts for SEO. The first featured image is added to the meta data of the page.
 
 ### Requirements
 
