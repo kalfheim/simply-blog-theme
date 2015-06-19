@@ -1,4 +1,8 @@
 @media print {
+  body {
+    padding-left: 0 !important;
+  }
+
   .side {
     display: none !important;
   }
@@ -6,5 +10,14 @@
   .content {
     float: none !important;
     width: 100% !important;
+    border-left: 0 !important;
+  }
+
+  .page-content {
+    max-width: none !important;
+  }
+
+  .btn-share-group {
+    display: none !important;
   }
 }
