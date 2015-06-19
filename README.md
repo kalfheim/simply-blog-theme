@@ -6,6 +6,8 @@ This theme is great for anyone who simply wants to write about stuff and not wor
 
 <img src="https://i.imgur.com/xlc6s4A.png" alt="Simply Blog theme for OctoberCMS">
 
+[Live Demo](https://oc-simply-blog.kadesign.no/)
+
 ### Features
 
 - Uses the official [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog) plugin.
