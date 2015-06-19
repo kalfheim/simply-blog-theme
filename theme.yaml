@@ -55,6 +55,7 @@ form:
                 default: 800
                 options:
                     600: 600 px
+                    700: 700 px
                     800: 800 px
                     1000: 1000 px
                     1200: 1200 px
