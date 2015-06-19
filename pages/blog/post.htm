@@ -14,6 +14,10 @@ function onEnd()
   if (isset($this['post'])) {
     $this->page->title = $this->post->title;
     $this->page->description = $this->post->excerpt;
+
+    if ($this->post->featured_images) {
+      $this['metaImage'] = URL::to($this->post->featured_images[0]->path);
+    }
   }
   else {
     return $this->controller->run('/404');
@@ -31,7 +35,7 @@ function onEnd()
 
     {% for image in post.featured_images %}
 
-      <img class="blog-featured-image" src="{{ image.path }}" alt="{{ image.description }}" itemprop="image">
+      <img class="blog-featured-image" src="{{ image.path|app }}" alt="{{ image.description }}" itemprop="image">
 
     {% endfor %}
 
