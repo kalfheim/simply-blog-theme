@@ -15,7 +15,7 @@ function onEnd()
     $this->page->title = $this->post->title;
     $this->page->description = $this->post->excerpt;
 
-    if ($this->post->featured_images) {
+    if (count($this->post->featured_images) != 0) {
       $this['metaImage'] = URL::to($this->post->featured_images[0]->path);
     }
   }
