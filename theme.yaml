@@ -125,7 +125,7 @@ form:
 
                         href:
                             label: URL
-                            comment: The full URL to your profile. It is recommended to begin the URL with two forward slash. Eg: //twitter.com/krisawzm
+                            comment: "The full URL to your profile. It is recommended to begin the URL with two forward slash. Eg: //twitter.com/krisawzm"
 
 
             #
